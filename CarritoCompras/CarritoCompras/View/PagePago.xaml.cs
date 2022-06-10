@@ -70,6 +70,11 @@ namespace CarritoCompras.View
             Usuario oUsuario = await ApiServiceFirebase.ObtenerUsuario();
             txtEmail.Text = oUsuario.Email;
         }
-       
+
+        private void Btn_TC_Clicked(object sender, EventArgs e)
+        {
+            metPagos.IsVisible = false;
+            pagoTarjeta.IsVisible = true;
+        }
     }
 }

@@ -23,7 +23,7 @@
                                             <ColumnDefinition Width="3*"/>
                                             <ColumnDefinition Width="7*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image Grid.Column="0" Source="restaurante.png" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="100" WidthRequest="100"></Image>
+                                        <Image Grid.Column="0" Source="icono.png" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="100" WidthRequest="100"></Image>
 
                                         <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" >
                                             <Label Text="{Binding titulo}" Margin="2" FontSize="15" FontAttributes="Bold" TextColor="Navy"/>
