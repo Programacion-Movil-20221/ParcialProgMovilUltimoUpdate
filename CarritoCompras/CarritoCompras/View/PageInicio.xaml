@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:CarritoCompras.View"
+       x:Class="CarritoCompras.View.PageInicio"
+       BackgroundColor="#3F619C">
+
+    <TabBar>
+        <Tab Title="HOME" Icon="inicio.png">
+            <ShellContent ContentTemplate="{DataTemplate views:PageExplorar}"/>
+        </Tab>
+        <Tab Title="CARRITO" Icon="carrito.png">
+            <ShellContent ContentTemplate="{DataTemplate views:PageBolsa}"/>
+        </Tab>
+        <Tab Title="PEDIDOS" Icon="history.png">
+            <ShellContent ContentTemplate="{DataTemplate views:PageCompras}"/>
+        </Tab>
+        <Tab Title="MI CUENTA" Icon="perfil.png">
+            <ShellContent ContentTemplate="{DataTemplate views:PagePerfil}"/>
+        </Tab>
+    </TabBar>
+</Shell>

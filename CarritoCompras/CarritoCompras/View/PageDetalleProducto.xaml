@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarritoCompras.View.PageDetalleProducto"
+             Title="Detalle del producto" BackgroundColor="#EAFAF1">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Padding="10,10,10,20" Margin="10" HasShadow="True" CornerRadius="20" BackgroundColor="#F5F5F5"
+                       HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="220"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Image Grid.Row="0" x:Name="ImagenProducto" HeightRequest="300" BackgroundColor="Transparent"/>
+                        
+                        <StackLayout Grid.Row="1">
+                            <Label x:Name="txtNombre"  TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+                        </StackLayout>
+                        
+                        <StackLayout Grid.Row="2">
+                            <Label x:Name="txtDescripcion" TextColor="Black" FontSize="15"/>
+                        </StackLayout>
+                        
+                        <StackLayout  Grid.Row="3">
+                            <Label x:Name="txtDetalle"  TextColor="Black" FontSize="15"/>
+                        </StackLayout>
+                        
+                        <StackLayout  Grid.Row="4">
+                            <Label x:Name="txtPrecio"  TextColor="Black" FontSize="15"/>
+                        </StackLayout>
+                        
+                        <Grid Grid.Row="5" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" HeightRequest="40" VerticalOptions="Center">
+                                <Label Text="Cantidad: " VerticalTextAlignment="Center" HeightRequest="40" TextColor="Black" FontSize="15"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Background="#D0D0D0" HeightRequest="40" VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="TapMenos" Tapped="TapMenos_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                                <Label Text="-" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                            
+                            <StackLayout Grid.Column="2" HeightRequest="40" VerticalOptions="Center" >
+                                <Label x:Name="lblCantidad" Text="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                            
+                            <StackLayout Grid.Column="3" Background="#D0D0D0" HeightRequest="40" VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="TapMas" Tapped="TapMas_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                                <Label Text="+" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+
+                        </Grid>
+                        
+                        <StackLayout Grid.Row="6" BackgroundColor="Transparent" HeightRequest="40" VerticalOptions="Center">
+                            <Button x:Name="btnAgregarBolsa"  Text="Agregar al carrito" TextColor="White" HeightRequest="40" 
+                                    BackgroundColor="#5499C7" HorizontalOptions="FillAndExpand" Clicked="BtnAgregarBolsa_Clicked"
+                                    CornerRadius="32"/>
+                        </StackLayout>
+                        
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

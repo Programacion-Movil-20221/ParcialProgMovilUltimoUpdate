@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarritoCompras.View.PageProductos"
+             BackgroundColor="#FBEEE6">
+    <StackLayout Padding="10">
+        <Frame BackgroundColor="#F5F5F5" CornerRadius="32" BorderColor="#D28E4E" Padding="5,5,5,5">
+            <SearchBar HeightRequest="35" x:Name="SearchProductos" Placeholder="Buscar producto"  CancelButtonColor="Black" 
+                   PlaceholderColor="Gray" HorizontalTextAlignment="Start"
+                   TextChanged="SearchProductos_TextChanged"/>
+        </Frame>
+
+        <CollectionView x:Name="cvListaProductos" ItemsSource="{Binding oListaProductos}" SelectionMode="Single" VerticalScrollBarVisibility="Never" SelectionChanged="CvListaProductos_SelectionChanged">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="6" HorizontalItemSpacing="6" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="5" HasShadow="True" BackgroundColor="#fff">
+                        <Grid Margin="0" Padding="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="160"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="{Binding imagen}" HeightRequest="150" WidthRequest="110" BackgroundColor="Transparent" />
+                            <StackLayout Grid.Row="1">
+                                <Label Text="{Binding nombre}" LineBreakMode="NoWrap" FontAttributes="Bold"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="2">
+                                <Label Text="{Binding precio, StringFormat='$ {0}'}"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+    
+</ContentPage>

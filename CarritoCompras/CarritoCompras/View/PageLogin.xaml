@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarritoCompras.View.PageLogin" BackgroundColor="#7FC9EC">
+
+
+        <StackLayout  Padding="10, 10, 10 , 10" VerticalOptions="CenterAndExpand">
+                <Image Source="logo.png" HeightRequest="300" WidthRequest="300"/>
+            
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="5">
+                    <Label Text="Iniciar sesion" Font="50" TextColor="#860000" FontAttributes="Bold"/>
+                </StackLayout>
+            
+                <Grid Padding="5,5,5,40">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="usuario.png" Grid.Row="0" Grid.Column="0"/>
+                    <Image Source="contra.png" Grid.Row="1" Grid.Column="0"/>
+
+                    <Entry x:Name="txtEmail" Placeholder="Email" TextColor="Black" Text="c@c.com"
+                            Grid.Row="0" Grid.Column="1"/>
+                    <Entry x:Name="txtContrasena" Placeholder="Contraseña" IsPassword="True" TextColor="Black" Text="12345678"
+                            Grid.Row="1" Grid.Column="1"/>
+
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnIniciarSesion" Text="Ingresar" BackgroundColor="#EC601F"  CornerRadius="30"
+                            TextColor="White" Clicked="BtnIniciarSesion_Clicked" Grid.Column="0" Grid.Row="0"/>
+            <Button x:Name="btnRegistrarse" Text="Registrarse" BackgroundColor="#2FB96E" CornerRadius="30"
+                            TextColor="White" Clicked="BtnRegistrarse_Clicked" Grid.Column="1" Grid.Row="0"/>
+
+                </Grid>
+                    
+
+                    
+            </StackLayout>
+
+
+</ContentPage>

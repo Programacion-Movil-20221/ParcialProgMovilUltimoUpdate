@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarritoCompras.View.PagePerfil"
+             Title="Mi cuenta" BackgroundColor="#D6EAF8">
+    <ContentPage.Content>
+        <Frame Padding="10,5,10,5" Margin="10,5,10,5" HasShadow="True" HorizontalOptions="FillAndExpand"
+               VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
+            <ScrollView>
+                <StackLayout>
+                    <Image Source="usuario.png"/>
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="5">
+                        <Label Text="Mis datos personales" Font="35" TextColor="#860000" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".45*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Numero de identificacion: " Grid.Column="0" Grid.Row="0" FontSize="17"
+                           VerticalOptions="Center"/>
+                        <Label Text="Nombres: " Grid.Column="0" Grid.Row="1" FontSize="20"
+                           VerticalOptions="Center"/>
+                        <Label Text="Apellidos: " Grid.Column="0" Grid.Row="2" FontSize="20"
+                           VerticalOptions="Center"/>
+                        <Label Text="Correo: " Grid.Column="0" Grid.Row="3" FontSize="20"
+                           VerticalOptions="Center"/>
+
+                        <Frame CornerRadius="20" BackgroundColor="#FEF9E7" Grid.Column="1" Grid.Row="0" VerticalOptions="Center">
+                            <Entry x:Name="txtDocumento" TextColor="Black" Text="" IsEnabled="False" VerticalOptions="Center"/>
+                        </Frame>
+
+                        <Frame CornerRadius="20" BackgroundColor="#FEF9E7" Grid.Column="1" Grid.Row="1" VerticalOptions="Center">
+                            <Entry x:Name="txtNombre" Placeholder="Nombres" TextColor="Black" VerticalOptions="Center"/>
+                        </Frame>
+
+                        <Frame CornerRadius="20" BackgroundColor="#FEF9E7" Grid.Column="1" Grid.Row="2" VerticalOptions="Center">
+                            <Entry x:Name="txtApellido" Placeholder="Apellidos" TextColor="Black" VerticalOptions="Center"/>
+                        </Frame>
+
+                        <Frame CornerRadius="20" BackgroundColor="#FEF9E7" Grid.Column="1" Grid.Row="3" VerticalOptions="Center">
+                            <Entry x:Name="txtEmail" TextColor="Black" Text="" IsEnabled="False" VerticalOptions="Center"/>
+                        </Frame>
+
+
+
+                    </Grid>
+
+                    <Grid HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <ImageButton x:Name="btnGuardarCambios" Source="salvar.png" BackgroundColor="Transparent"
+                                 Clicked="BtnGuardarCambios_Clicked" Grid.Column="0" Grid.Row="0"/>
+
+                        <ImageButton x:Name="btnCerrarSesion"  Source="cerrarsesion.png" BackgroundColor="Transparent"
+                                 Clicked="BtnCerrarSesion_Clicked" Grid.Column="1" Grid.Row="0"/>
+
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

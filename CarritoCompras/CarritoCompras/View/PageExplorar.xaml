@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarritoCompras.View.PageExplorar"
+             Title="Categorias - Almuerzos">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+
+                <ListView x:Name="ListViewCategorias" ItemsSource="{Binding oListaCategoria}" HasUnevenRows="True" 
+                      IsPullToRefreshEnabled="False" ItemTapped="ListViewCategorias_ItemTapped" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start" HeightRequest="270" RowSpacing="10">
+                                    <Image Source="{Binding imagen}" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#90432D" Opacity="0.9">
+                                        <Label Text="{Binding nombre}" Margin="10" TextColor="#fff" FontSize="35"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
